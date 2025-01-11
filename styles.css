@@ -1,0 +1,135 @@
+/* Modern color palette and variables */
+:root {
+    --primary: #FF4B6E;
+    --primary-dark: #E63E5C;
+    --secondary: #6C63FF;
+    --background: #1E1E2E;
+    --surface: #2A2A3C;
+    --text: #FFFFFF;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --success: #4ADE80;
+    --success-dark: #22C55E;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, var(--background), #2B2B3F);
+    color: var(--text);
+}
+
+.container {
+    text-align: center;
+    background: var(--surface);
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    max-width: 90%;
+    width: 400px;
+}
+
+h1 {
+    color: var(--text);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.timer {
+    font-size: 5rem;
+    font-weight: 600;
+    margin: 1.5rem 0;
+    color: var(--text);
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.controls button {
+    font-size: 1.1rem;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#start {
+    background: linear-gradient(135deg, var(--success), var(--success-dark));
+    color: white;
+}
+
+#start:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 222, 128, 0.4);
+}
+
+.reset {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+}
+
+.reset:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 75, 110, 0.4);
+}
+
+.toggle-mode {
+    background: linear-gradient(135deg, var(--secondary), #5853DB);
+    color: white;
+}
+
+.toggle-mode:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
+}
+
+.mode {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+}
+
+/* Add animation for mode changes */
+.timer, .mode {
+    transition: all 0.3s ease;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .container {
+        padding: 2rem;
+    }
+    
+    .timer {
+        font-size: 3.5rem;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .controls button {
+        width: 100%;
+    }
+}
